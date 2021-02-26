@@ -49,3 +49,5 @@ IterationCount=10
 |        Linq |     Net48 |      .NET 4.8 |  58.323 ns | 0.3934 ns | 0.2341 ns | 14.67 |    0.36 |     **** |
 |    &#39;Linq @&#39; |     Net48 |      .NET 4.8 |  85.964 ns | 0.3201 ns | 0.1674 ns | 21.64 |    0.60 |    ***** |
 | &#39;Linq Dict&#39; |     Net48 |      .NET 4.8 |  94.577 ns | 1.6347 ns | 0.8550 ns | 23.81 |    0.78 |   ****** |
+
+![Bar chart](WrappedValuesBenchmarks.ArraySumBenchmark-barplot.png)
