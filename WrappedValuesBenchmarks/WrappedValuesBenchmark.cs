@@ -1,12 +1,27 @@
 ﻿using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Engines;
+using BenchmarkDotNet.Jobs;
+using BenchmarkDotNet.Mathematics;
 
 namespace WrappedValuesBenchmarks
 {
-    [SimpleJob(RunStrategy.ColdStart, targetCount: 15, invocationCount: 300_000_000)]
+    [MarkdownExporterAttribute.GitHub]
+    [HtmlExporter]
+    //[SimpleJob(RuntimeMoniker.Mono, targetCount: Program.targetCount, invocationCount: 210_000_000, id: "Mono1")]
+    //[SimpleJob(RuntimeMoniker.Net48, targetCount: Program.targetCount, invocationCount: 210_000_000, id: "Net 48")]
+    //[SimpleJob(RuntimeMoniker.NetCoreApp31, targetCount: Program.targetCount, invocationCount: 210_000_000, id: "Net 48")]
+    [SimpleJob(RuntimeMoniker.NetCoreApp50, targetCount: Program.targetCount,
+        //invocationCount: 210_000_000,
+        id: "CoreApp50")]
+    [SimpleJob(RuntimeMoniker.Net472, targetCount: Program.targetCount,
+        //invocationCount: 210_000_000,
+        id: "Net472")]
+    //[LegacyJitX86Job]
+    //[LegacyJitX64Job]
+    // [RyuJitX64Job]
+    [RankColumn(NumeralSystem.Stars)]
     public class WrappedValuesBenchmark
     {
-        [Benchmark(Description = "Wrapped integer")]
+        [Benchmark(Description = "Wrapped integer", Baseline = true)]
         public XPipeIndex Test1()
         {
             return XPipeIndex.Zero;
@@ -17,7 +32,7 @@ namespace WrappedValuesBenchmarks
         {
             return 0;
         }
-        
+
         [Benchmark(Description = "Wrapped integer increment")]
         public XPipeIndex Test3()
         {

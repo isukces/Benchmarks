@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace WrappedValuesBenchmarks
 {
-    public struct XPipeIndex : IEquatable<XPipeIndex>, IComparable<XPipeIndex>
+    public struct XPipeIndex : IEquatable<XPipeIndex>, IComparable<XPipeIndex>, IIntegerBasedKey
     {
         public XPipeIndex(int value)
         {

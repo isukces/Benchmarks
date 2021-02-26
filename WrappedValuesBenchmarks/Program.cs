@@ -1,5 +1,4 @@
-﻿using System;
-using BenchmarkDotNet.Running;
+﻿using BenchmarkDotNet.Running;
 
 namespace WrappedValuesBenchmarks
 {
@@ -7,7 +6,10 @@ namespace WrappedValuesBenchmarks
     {
         private static void Main(string[] args)
         {
-            var summary = BenchmarkRunner.Run<WrappedValuesBenchmark>();
+            var s2 = BenchmarkRunner.Run<ArraySumBenchmark>();
+            // var s1 = BenchmarkRunner.Run<WrappedValuesBenchmark>();
         }
+
+        public const int targetCount = 10;
     }
 }

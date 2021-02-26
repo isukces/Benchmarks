@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>net48</TargetFramework>
+        <TargetFrameworks>net472;netcoreapp5.0;net48;netcoreapp3.1</TargetFrameworks>
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="BenchmarkDotNet" Version="0.12.1" />
